@@ -1,32 +1,35 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Vazir";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Vazir";
 }
 
 @font-face {
-    font-family: "Vazir";
-    src: url("./public/fonts/vazir/Vazir.woff2") format("woff2");
+  font-family: "Vazir";
+  src: url("./public/fonts/vazir/Vazir.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "Vazir-Bold";
-    src: url("./public/fonts/vazir/Vazir-Bold.woff") format("woff2");
+  font-family: "Vazir-Bold";
+  src: url("./public/fonts/vazir/Vazir-Bold.woff") format("woff2");
 }
 
-.d-f{
-  display: flex;
-  align-items: center;
-  justify-content: center ;
-width:1520px;
-height: 734px;
-
-}
-.form {
+.d-f {
   display: flex;
   flex-direction: column;
-  align-items: normals;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+}
+
+.form {
+  display: flex;
+  flex-direction:column;
+  align-items: normal;
   gap: 10px;
   max-width: 350px;
   background-color: #f8f8f8;
@@ -46,7 +49,8 @@ height: 734px;
   padding-left: 30px;
 }
 
-.title::before,.title::after {
+.title::before,
+.title::after {
   position: absolute;
   content: "";
   height: 16px;
@@ -68,7 +72,8 @@ height: 734px;
   animation: pulse 1s linear infinite;
 }
 
-.message, .signin {
+.message,
+.signin {
   color: rgba(88, 87, 87, 0.822);
   font-size: 14px;
 }
@@ -103,7 +108,7 @@ height: 734px;
   border-radius: 10px;
 }
 
-.form label .input + span {
+.form label .input+span {
   position: absolute;
   left: 10px;
   top: 15px;
@@ -113,18 +118,19 @@ height: 734px;
   transition: 0.3s ease;
 }
 
-.form label .input:placeholder-shown + span {
+.form label .input:placeholder-shown+span {
   top: 15px;
   font-size: 0.9em;
 }
 
-.form label .input:focus + span,.form label .input:valid + span {
+.form label .input:focus+span,
+.form label .input:valid+span {
   top: 30px;
   font-size: 0.7em;
   font-weight: 600;
 }
 
-.form label .input:valid + span {
+.form label .input:valid+span {
   color: green;
 }
 
@@ -154,3 +160,35 @@ height: 734px;
     opacity: 0;
   }
 }
+/* loder */
+.loading svg polyline {
+
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: rgb(209, 217, 243);
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: royalblue;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  50.5% {
+    opacity: 0.5;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
